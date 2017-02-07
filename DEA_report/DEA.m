@@ -4,8 +4,6 @@
 % The data matrix should be given inputs first then outputs
 % The number of inputs and outputs should be given in the variables
 % "inputs" and "outputs", respectively.
-clear all
-D=[4795,1076,619,1277,585,132,559;
     4881,1071,619,1287,591,97,546;
     4744,956,637,1240,609,107,608;
     4806,952,544,1234,518,56,497;
@@ -17,7 +15,6 @@ D=[4795,1076,619,1277,585,132,559;
     4838,1049,572,1205,548,67,434;
     4813,1001,500,1180,473,60,463;
     4789,1149,506,1171,475,59,503];
-D=D.'; % If necessary.
 m = 2; % # of inputs
 s= 5; % # of outputs
 n=size(D,2); % # of DMUs
