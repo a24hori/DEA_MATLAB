@@ -1,9 +1,10 @@
-% DEA solver
+% DEA_MATLAB tool
 % 11/13/16 created by Atsushi Hori
 % Notes:
 % The data matrix should be given inputs first then outputs
 % The number of inputs and outputs should be given in the variables
 % "inputs" and "outputs", respectively.
+
 function [] = DEA(D,inputs,outputs,p)
 % an example 
 % D=[4795,1076,619,1277,585,132,559;
