@@ -7,7 +7,7 @@ The application needs <b>Mathematical Optimization</b> package.</p>
 <ul> 2. Prepare a data matrix D=(d_{ij}). It is either possible if you input evaluation items or DMUs in rows.</ul>
 </li>-->
 <h3>DEA_MATLABとは</h3>
-<p>DEA_MATLABは包絡分析法(DEA)をするためのMATLABツールです。DEAはオペレーションズ・リサーチや経済学の分野でしばしば研究され、意思決定ツールのひとつとして知られています。また、DEAはその意思決定主体(DMU)における効率性を測るために使われます。動作条件として、<b>数理最適化ツール</b>が入っていなければ動きません。</p>
+<p>DEA_MATLABは包絡分析法(DEA)のMATLABツールです。DEAはオペレーションズ・リサーチや経済学の分野でしばしば研究され、意思決定ツールのひとつとして知られています。また、DEAはその意思決定主体(DMU)における効率性を測るために使われます。動作条件として、<b>数理最適化ツール(Optimization Toolbox)</b>が入っていなければ動きません。</p>
 <p>DEAについて理論的な説明がされている文献は枚挙に暇がありません。ここでは、その一部（Webページで閲覧可能）を列挙します。
 <ul>
 <li><a href="http://www.bunkyo.ac.jp/~hotta/lab/courses/2010/2010dmt/10dmt_7.pdf">文教大学 情報学部 堀田敬介氏の講義スライド</a></li>
@@ -16,7 +16,7 @@ The application needs <b>Mathematical Optimization</b> package.</p>
 </ul>
 DEAのモデルは種々提案されており、制御不能変数（その意思決定主体が改善できない評価項目）が存在するような場合を考慮したモデルもあります。本ツールは、意思決定主体は全ての項目において改善可能であると仮定したCCRモデル（入力指向型）を前提としています。
 </p>
-<p>本ツールのCCRモデルは、線形計画問題(LP)に変換された形の問題を内点法（linprogのデフォルトでは、'interior-point-legacy'）で解いています。このときに出力されるラグランジュ乗数は、双対問題の変数に一致しますので、この双対変数を用いてそれぞれのDMUにおける努力目標値を算出しています。
+<p>本ツールは分数計画問題(FP)を線形計画問題(LP)に変換したものを内点法（linprogのデフォルトでは、'interior-point-legacy'）で解いています。このときに出力されるラグランジュ乗数は、双対問題の変数に一致しますので、この双対変数を用いてそれぞれのDMUにおける努力目標値を算出しています。
 </p>
 <h3>使い方</h3>
 <ol>
