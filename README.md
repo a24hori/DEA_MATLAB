@@ -7,8 +7,7 @@ The application needs <b>Mathematical Optimization</b> package.</p>
 <ul> 2. Prepare a data matrix D=(d_{ij}). It is either possible if you input evaluation items or DMUs in rows.</ul>
 </li>-->
 <h3>DEA_MATLABとは</h3>
-<p>DEA_MATLABは包絡分析法(DEA)をするためのMATLABツールです。DEAはオペレーションズ・リサーチや経済学の分野でしばしば研究され、意思決定ツールのひとつとして知られています。また、DEAはその意思決定主体(DMU)における効率性を測るために使われます。<br>
-動作条件として、<b>数理最適化ツール</b>が入っていなければ動きません。</p>
+<p>DEA_MATLABは包絡分析法(DEA)をするためのMATLABツールです。DEAはオペレーションズ・リサーチや経済学の分野でしばしば研究され、意思決定ツールのひとつとして知られています。また、DEAはその意思決定主体(DMU)における効率性を測るために使われます。動作条件として、<b>数理最適化ツール</b>が入っていなければ動きません。</p>
 <p>DEAについて理論的な説明がされている文献は枚挙に暇がありません。ここでは、その一部（Webページで閲覧可能）を列挙します。
 <ul>
 <li><a href="http://www.bunkyo.ac.jp/~hotta/lab/courses/2010/2010dmt/10dmt_7.pdf">文教大学 情報学部 堀田敬介氏の講義スライド</a></li>
