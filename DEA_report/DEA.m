@@ -7,8 +7,11 @@
 
 function [] = DEA(D,inputs,outputs)
 
-n1=size(D,1);
-n2=size(D,2);
+DMU_noneff = []; % The set of DMU non-efficient
+eps = 1.0 * 10^(-5); % accuracy tolerance of a DMU's objective function value
+
+n1=size(D,1); % # of rows
+n2=size(D,2); % # of columns
 
 if (inputs + outputs == n1)
     n=n2; % # of DMUs
@@ -26,10 +29,10 @@ X = D(1:inputs,:); % input matrix
 Y = D(inputs+1:inputs+outputs,:); % output matrix
 
 % declare variables
-uvk = [];
-fvalk = [];
-lambdak = [];
-% uv are separated by: u is coef. of x and v is coef. of y
+uvk = []; % variables of DMU's primal problems
+% uv are separated by: u is coefficients of x and v is those of y
+fvalk = []; % objective values of primal problems
+lambdak = []; % dual variables (Lagrange multipliers of CCR_LP)
 
 for i=1:n
     % solve DMU i's LP
@@ -47,6 +50,12 @@ for i=1:n
 
 end
 
+for o=1:n
+    if (abs(fvalk(:,o)) < 1-eps)
+        DMU_noneff = [DMU_noneff o];
+    end
+end
+
 DMU_eff  = [];
 
 for o=1:n
@@ -59,14 +68,23 @@ for o=1:n
 end
 
 fprintf('---- The result ----\n');
-
-for i=1:n
-    fprintf('-DMU %2d''s obj.-', i);
+fprintf('DMU_noneff={');
+for o=DMU_noneff
+    if (o==max(DMU_noneff))
+        fprintf('%d',o);
+    else
+        fprintf('%d,',o);
+    end
 end
+fprintf('}\n');
+for o=DMU_noneff
+    fprintf('-DMU %2d''s obj.-', o);
+end
+
 fprintf('\n');
 
 for j=1:m
-    for o=1:n
+    for o=DMU_noneff
         fprintf('%15.3f',DMU_eff(j,o));
     end
     fprintf('\n');
