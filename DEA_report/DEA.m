@@ -5,8 +5,8 @@
 % The number of inputs and outputs should be given in the variables
 % "inputs" and "outputs", respectively.
 
-function [] = DEA(D,inputs,outputs,p)
-% an example 
+function [] = DEA(D,inputs,outputs)
+% an example
 % D=[4795,1076,619,1277,585,132,559;
 %     4881,1071,619,1287,591,97,546;
 %     4744,956,637,1240,609,107,608;
@@ -19,23 +19,18 @@ function [] = DEA(D,inputs,outputs,p)
 %     4838,1049,572,1205,548,67,434;
 %     4813,1001,500,1180,473,60,463;
 %     4789,1149,506,1171,475,59,503];
-if (p)
-	D=D.';
-    n=size(D,2); % # of DMUs
-    m=size(D,1); % # of classes
-    X = D(1:inputs,:); % input matrix
-    Y = D(inputs+1:inputs+outputs,:); % output matrix
-else
-    n=size(D,1); % # of DMUs
-    m=size(D,2); % # of classes
-    X = D(:,1:inputs); % input matrix
-    Y = D(:,inputs+1:inputs+outputs); % output matrix
-end
+
+n=size(D,1); % # of DMUs
+m=size(D,2); % # of classes
+X = D(:,1:inputs); % input matrix
+Y = D(:,inputs+1:inputs+outputs); % output matrix
+
 if (inputs+outputs~=m)
-    fprintf('The sum of inputs and outputs should be equal to the number of DMUs.\n');
+    fprintf('The sum of inputs and outputs should be equal to the number of evaluation items.\n');
     return;
 end
-% Solve LPO
+
+% declare variables
 uvk = [];
 fvalk = [];
 lambdak = [];
