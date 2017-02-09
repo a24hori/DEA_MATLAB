@@ -6,7 +6,6 @@ The application needs <b>Mathematical Optimization</b> package.</p>
 <ul> 1. Install DEA.m from ./DEA_MATLAB.</ul>
 <ul> 2. Prepare a data matrix D=(d_{ij}). It is either possible if you input evaluation items or DMUs in rows.</ul>
 </li>-->
-<br>
 <h3>DEA_MATLAB</h3>
 <p>DEA_MATLABは包絡分析法をするためのMATLABツールです。オペレーションズ・リサーチや経済学の分野でしばしば研究され、意思決定ツールのひとつとして知られています。また、DEAはその意思決定主体(DMU)における効率性を測るために使われます。<br>
 動作条件として、<b>数理最適化ツール</b>が入っていなければ動きません。</p>
